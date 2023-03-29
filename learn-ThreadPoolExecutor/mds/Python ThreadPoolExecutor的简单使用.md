@@ -345,3 +345,5 @@ if __name__ == '__main__':
 - 不论设置不设置timeout参数，wait函数都不会抛出异常。要获取返回值，需要调用result方法
 - as_completed函数，如果设置了timeout参数，根据运行情况，会抛出异常。直接返回的是子线程的返回值，无需调用result方法，但返回值的顺序是不固定的，哪个线程先执行完，则先返回哪个线程的返回值
 - map函数，如果设置了timeout参数，根据运行情况，会抛出异常。直接返回的是子线程的返回值，无需调用result方法，且返回值的顺序是固定的，不论哪个线程执行完毕，都根据顺序返回结果
+
+[github](https://github.com/rainbow-tan/learn-python/tree/main/learn-ThreadPoolExecutor)
