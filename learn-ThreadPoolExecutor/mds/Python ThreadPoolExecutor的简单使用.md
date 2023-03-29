@@ -49,7 +49,7 @@ if __name__ == '__main__':
 
 运行
 
-![image-20230329160400142](C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20230329160400142.png)
+![image-20230329160400142](https://img2023.cnblogs.com/blog/1768648/202303/1768648-20230329165101121-1540961112.png)
 
 ### 2、查看子线程是否运行结束
 
@@ -94,7 +94,7 @@ if __name__ == '__main__':
 
 运行
 
-![image-20230329160253390](C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20230329160253390.png)
+![image-20230329160253390](https://img2023.cnblogs.com/blog/1768648/202303/1768648-20230329165101625-304567011.png)
 
 ### 3、获取子线程的返回
 
