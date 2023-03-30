@@ -207,19 +207,22 @@ if __name__ == '__main__':
 ### 3、安装git2.38
 
 ```sh
-yum remove -y git &&
-mkdir -p /home/git-2.38-package &&
-cd /home/git-2.38-package &&
-yum install -y wget &&
-wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.38.0.tar.gz --no-check-certificate &&
-yum install -y curl-devel expat-devel openssl-devel gcc-c++ &&
-tar -zxvf git-2.38.0.tar.gz &&
-cd git-2.38.0 &&
-./configure --prefix=/usr/local/git &&
-make -j8 &&
-make install -j8 &&
-echo "export PATH=$PATH:/usr/local/git/bin" >> /etc/profile &&
-source /etc/profile &&
+#git下载地址 https://mirrors.edge.kernel.org/pub/software/scm/git/
+#去git地址查看版本.直接替换git_version可以安装任意版本
+git_version=git-2.38
+rm -rf /etc/${git_version}
+mkdir -p /etc/${git_version}
+yum remove -y git
+yum install -y wget
+wget -P /etc/${git_version} https://mirrors.edge.kernel.org/pub/software/scm/git/${git_version}.0.tar.gz --no-check-certificate
+yum install -y curl-devel expat-devel openssl-devel gcc-c++
+tar -zxvf /etc/${git_version}/${git_version}.0.tar.gz -C /etc/${git_version}
+cd /etc/${git_version}/${git_version}.0
+./configure --prefix=/usr/local/git
+make -j8
+make install -j8
+echo "export PATH=$PATH:/usr/local/git/bin" >> /etc/profile
+source /etc/profile
 git --version
 ```
 
@@ -407,3 +410,5 @@ if __name__ == '__main__':
     """
     main()
 ```
+
+[github](https://github.com/rainbow-tan/learn-python/tree/main/Centos7%E4%B8%AA%E4%BA%BA%E8%84%9A%E6%9C%AC)
