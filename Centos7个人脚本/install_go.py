@@ -46,7 +46,7 @@ def close(ssh_client: SSHClient):
 def get_pkg():
     _, all_files = traverse_folder('.', True)
     for file in all_files:
-        if os.path.basename(file).startswith('go1.'):
+        if os.path.basename(file).startswith('go1.') and file.endswith('.tar.gz'):
             print(f"找到了go安装包:{os.path.basename(file)}, 绝对路径:{file}")
             return file
     raise Exception("未找到go安装包, 去'https://studygolang.com/dl'下载后, 放在当前目录!!!")
@@ -96,10 +96,10 @@ def go_env(ssh_client: SSHClient, linux_path):
 
 
 def main():
-    ip = '172.16.70.42'
+    ip = '172.16.70.34'
     port = 22
     username = 'root'
-    password = '111111'
+    password = '123456'
     ssh_client = conn_linux(ip, port, username, password)
 
     pkg = get_pkg()

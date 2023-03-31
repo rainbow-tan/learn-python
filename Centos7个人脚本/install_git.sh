@@ -1,5 +1,7 @@
 #git下载地址 https://mirrors.edge.kernel.org/pub/software/scm/git/
 #去git地址查看版本.直接替换git_version可以安装任意版本
+#https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.10.4.tar.gz
+#https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.15.0.tar.gz
 git_version=git-2.38.0
 rm -rf /etc/${git_version}
 mkdir -p /etc/${git_version}
