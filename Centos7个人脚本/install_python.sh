@@ -18,15 +18,17 @@ make -j8
 make install -j8
 if [ ${version:0:1} == "2" ]
 then
-  echo "python2 version"
   rm -rf /usr/bin/${python_version}
-  ln -s /usr/local/${python_version}/bin/python2 /usr/bin/${python_version}
+  ln -s /usr/local/${python_version}/bin/python /usr/bin/${python_version}
   rm -rf /usr/bin/python2
-  ln -s /usr/local/${python_version}/bin/python2 /usr/bin/python2
+  ln -s /usr/local/${python_version}/bin/python /usr/bin/python2
+  rm -rf /usr/bin/python
+  ln -s /usr/local/${python_version}/bin/python /usr/bin/python
 else
-  echo "python3 version"
   rm -rf /usr/bin/${python_version}
   ln -s /usr/local/${python_version}/bin/python3 /usr/bin/${python_version}
   rm -rf /usr/bin/python3
   ln -s /usr/local/${python_version}/bin/python3 /usr/bin/python3
 fi
+#如果下载的是python2版本, 则软链接是python2 和 python 和 python${version}
+#如果下载的是python3版本, 则软链接是python3 和 python${version}
