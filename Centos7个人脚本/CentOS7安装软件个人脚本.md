@@ -181,7 +181,7 @@ git --version
 
 例如安装git-2.38.0，则设置git_version=git-2.38.0
 
-![image-20230331101202080](C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20230331101202080.png)
+![image-20230331101202080](https://img2023.cnblogs.com/blog/1768648/202303/1768648-20230331153034560-47516526.png)
 
 
 
