@@ -1,5 +1,7 @@
 pandas的简单使用-2-常用函数
 
+记录一下潘大师的常用的函数和实现的功能
+
 ## 常用函数
 
 ### 查看头N行数据
@@ -316,3 +318,5 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+[github](https://github.com/rainbow-tan/learn-python/tree/main/learn-pandas)
