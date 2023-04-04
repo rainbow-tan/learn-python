@@ -1,4 +1,4 @@
-python gif与png的转换
+python PIL个人使用记录
 
 ## 1、gif转png
 
@@ -67,5 +67,26 @@ def png_to_gif(path: str, filename: str):
 ```
 
 学习链接 https://www.cnblogs.com/fly-kaka/p/11694011.html
+
+## 3、获取所有像素点的颜色
+
+```python
+def get_all_pixel(file):
+    """
+    获取所有的像素点的颜色
+    :param file:
+    :return:
+    """
+    img = Image.open(file)
+    width = img.size[0]
+    height = img.size[1]
+    ret = list()
+    for x in range(width):
+        for y in range(height):
+            pixel = img.getpixel((x, y))
+            print(f"{x},{y} -----> {pixel}")
+            ret.append(dict(x=x, y=y, pixel=pixel))
+    return ret
+```
 
 [github](https://github.com/rainbow-tan/learn-python/tree/main/gif%E8%BD%AC%E4%B8%BApng)
