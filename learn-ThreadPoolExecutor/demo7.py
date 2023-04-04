@@ -21,7 +21,7 @@ def job(name, second):
 def main():
     now = datetime.datetime.now()
     log(f"开始时间:{now}")
-    executor = ThreadPoolExecutor(max_workers=5, thread_name_prefix="MyThread")#超过线程个数的任务
+    executor = ThreadPoolExecutor(max_workers=5, thread_name_prefix="MyThread")  # 超过线程个数的任务
     for result in executor.map(job, ("墨玉麒麟", "张良", "猴子", "弄玉", "墨子", "韩飞", "逆鳞"), (3, 5, 4, 8, 5, 6, 10)):
         print(result)
     log("主线程运行中.")
