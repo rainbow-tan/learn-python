@@ -33,9 +33,9 @@ def gif_to_png(filename: str):
     return save_path
 ```
 
-![01](E:\MD文档\learn-python\gif转为png\01.gif)
+![01](https://img2023.cnblogs.com/blog/1768648/202304/1768648-20230404154206093-260422914.gif)
 
-![image-20230404153820660](C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20230404153820660.png)
+![image-20230404153820660](https://img2023.cnblogs.com/blog/1768648/202304/1768648-20230404154206620-1631444288.png)
 
 ## 2、png转gif
 
@@ -68,4 +68,4 @@ def png_to_gif(path: str, filename: str):
 
 学习链接 https://www.cnblogs.com/fly-kaka/p/11694011.html
 
-github
+[github](https://github.com/rainbow-tan/learn-python/tree/main/gif%E8%BD%AC%E4%B8%BApng)
