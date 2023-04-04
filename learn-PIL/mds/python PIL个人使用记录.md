@@ -89,4 +89,4 @@ def get_all_pixel(file):
     return ret
 ```
 
-[github](https://github.com/rainbow-tan/learn-python/tree/main/gif%E8%BD%AC%E4%B8%BApng)
+[github](https://github.com/rainbow-tan/learn-python/tree/main/learn-PIL)
