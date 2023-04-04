@@ -81,7 +81,5 @@ def png_to_gif(path: str, filename: str):
 
 
 if __name__ == '__main__':
-    # gif_to_png('02.GIF')
-    gif_to_png('01.GIF')
-    # reverse_gif('02.gif')
-    png_to_gif('image/01', 'test.gif')
+    gif_to_png('src-image/01.gif')
+    png_to_gif('image/01', 'debug.gif')
