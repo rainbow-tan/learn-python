@@ -1,4 +1,4 @@
-paramiko简单使用
+python ssh Linux机器 paramiko库的简单使用
 
 ## 以用户名密码方式连接Linux主机
 
@@ -73,3 +73,5 @@ def exec_cmd(cmd: str, ssh: paramiko.SSHClient):
     err = err.read().decode()
     return out, err
 ```
+
+[github](https://github.com/rainbow-tan/learn-python/tree/main/learn-paramiko)
