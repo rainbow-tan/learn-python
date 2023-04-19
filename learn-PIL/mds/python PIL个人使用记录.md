@@ -89,4 +89,81 @@ def get_all_pixel(file):
     return ret
 ```
 
+## 4、图片相似度
+
+参考[Python计算图片之间的相似度](https://blog.csdn.net/qq_38641985/article/details/118304624)，代码就不贴了，在[github](https://github.com/rainbow-tan/learn-python/tree/main/learn-PIL)复制粘贴就能用，找一个适合自己的算法。
+
+![image-20230419094147574](C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20230419094147574.png)
+
+## 5、去除背景
+
+```python
+import os.path
+
+from rembg import remove
+
+
+def remove_bg(src, des):
+    src = os.path.abspath(src)
+    des = os.path.abspath(des)
+    if os.path.isfile(os.path.dirname(des)):
+        raise Exception(f'目标文件夹是一个已存在的文件:{os.path.dirname(des)}')
+
+    if not os.path.isdir(os.path.dirname(des)):
+        os.makedirs(os.path.dirname(des))
+
+    with open(src, 'rb') as i:
+        with open(des, 'wb') as o:
+            o.write(remove(i.read()))
+    print(f"remove bg success, save to {des}")
+    return des
+
+
+def main():
+    remove_bg('img/loading.png', 'img/loading_no_background.png')
+    remove_bg('img/stop_flag.png', 'img/stop_flag_no_background.png')
+
+
+if __name__ == '__main__':
+    main()
+```
+
+## 6、转换图片模式为模式1
+
+```python
+import os.path
+
+from PIL import Image
+
+
+def convert(src, des):
+    # 转为1模式 像素点不是1就是255 非黑即白
+    src = os.path.abspath(src)
+    des = os.path.abspath(des)
+    if os.path.isfile(os.path.dirname(des)):
+        raise Exception(f'目标文件夹是一个已存在的文件:{os.path.dirname(des)}')
+
+    if not os.path.isdir(os.path.dirname(des)):
+        os.makedirs(os.path.dirname(des))
+    empire = Image.open(src)
+    empire_1 = empire.convert('1')
+    empire_1.save(des)
+    print(f"convert success, save to {des}")
+    return des
+
+
+def main():
+    convert('img/loading.png', 'img/1/loading_1.png')
+    convert('img/loading_no_background.png', 'img/1/loading_no_background_1.png')
+
+    convert('img/stop_flag.png', 'img/1/stop_flag_1.png')
+    convert('img/stop_flag_no_background.png', 'img/1/stop_flag_no_background_1.png')
+
+
+if __name__ == '__main__':
+    main()
+```
+
+没啥人看，就不贴运行截图了，反正也就自己记录，后续直接CV大法好
+
 [github](https://github.com/rainbow-tan/learn-python/tree/main/learn-PIL)
