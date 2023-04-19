@@ -93,7 +93,7 @@ def get_all_pixel(file):
 
 参考[Python计算图片之间的相似度](https://blog.csdn.net/qq_38641985/article/details/118304624)，代码就不贴了，在[github](https://github.com/rainbow-tan/learn-python/tree/main/learn-PIL)复制粘贴就能用，找一个适合自己的算法。
 
-![image-20230419094147574](C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20230419094147574.png)
+![image-20230419094147574](https://img2023.cnblogs.com/blog/1768648/202304/1768648-20230419100201745-1373059806.png)
 
 ## 5、去除背景
 
