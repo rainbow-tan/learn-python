@@ -15,11 +15,11 @@ def choose_by_bool(df: DataFrame):
     print(data)
     print('*' * 50)
 
-    data = df[df['gender'] == 'male']  # 现在gender列等于male的行
+    data = df[df['gender'] == 'male']  # 选择gender列等于male的行
     print(data)
     print('*' * 50)
 
-    data = df[df['education'].isin([12, 14, 18])]  # 现在education的值在[12,14,18]的行
+    data = df[df['education'].isin([12, 14, 18])]  # 选择education的值在[12,14,18]的行
     print(data)
 
     data = df[filter_fun2(df['education'])]  # 自定义函数,选择education是偶数的行
