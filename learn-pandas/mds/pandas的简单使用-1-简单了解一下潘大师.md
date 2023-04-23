@@ -31,7 +31,7 @@ Pandas 的目标是成为 Python 数据分析实践与实战的必备高级工�
 
 这里下载的是https://vincentarelbundock.github.io/Rdatasets/datasets.html中的 Affairs来进行测试
 
-![image-20230403150917892](C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20230403150917892.png)
+![image-20230403150917892](https://img2023.cnblogs.com/blog/1768648/202304/1768648-20230413162326984-2046442760.png)
 
 [github](https://github.com/rainbow-tan/learn-python/tree/main/learn-pandas)
 

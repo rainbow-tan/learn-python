@@ -43,11 +43,11 @@ df.sort_index(axis='columns', ascending=False)  # 按照Y轴降序排序
 
 按照X轴排序，即按照索引排序
 
-![image-20230403160348545](C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20230403160348545.png)
+![image-20230403160348545](https://img2023.cnblogs.com/blog/1768648/202304/1768648-20230413175133039-1203463584.png)
 
 按照Y轴排序，即按照列名排序
 
-![image-20230403160720118](C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20230403160720118.png)
+![image-20230403160720118](https://img2023.cnblogs.com/blog/1768648/202304/1768648-20230413175133526-1122065333.png)
 
 上述几个函数参考代码
 
