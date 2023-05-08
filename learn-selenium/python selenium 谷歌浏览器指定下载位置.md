@@ -33,6 +33,8 @@ driver.quit()
 
 下载路径要写绝对路径，否则还是会下载到默认路径
 
+下载路径可以自己创建，也可以不创建，浏览器会自动创建
+
 ## 参考链接
 
 [(40条消息) Python selenium —— 文件下载，不弹出窗口，直接下载到指定路径_selenium下载文件_huilan_same的博客-CSDN博客](https://blog.csdn.net/huilan_same/article/details/52789954)
