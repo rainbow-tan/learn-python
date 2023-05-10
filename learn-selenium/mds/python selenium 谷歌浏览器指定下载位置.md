@@ -38,3 +38,7 @@ driver.quit()
 ## 参考链接
 
 [(40条消息) Python selenium —— 文件下载，不弹出窗口，直接下载到指定路径_selenium下载文件_huilan_same的博客-CSDN博客](https://blog.csdn.net/huilan_same/article/details/52789954)
+
+## 代码github
+
+https://github.com/rainbow-tan/learn-python/tree/main/learn-selenium

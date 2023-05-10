@@ -46,3 +46,7 @@ driver.quit()
 
 https://www.cnblogs.com/lingwang3/p/14440087.html
 https://www.codenong.com/81d215683e7fbf0ebd81/
+
+## 代码github
+
+https://github.com/rainbow-tan/learn-python/tree/main/learn-selenium
