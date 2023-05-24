@@ -81,7 +81,7 @@ After=network.target
 [Service]
 Type=simple
 User=root
-ExecStart=/etc/{basename}/{basename}/{pre} --config.file=/etc/{basename}/{basename}/{pre}.yml
+ExecStart=/etc/{basename}/{basename}/{pre} --config.file=/etc/{basename}/{basename}/{pre}.yml --web.enable-lifecycle
 Restart=on-failure
 [Install]
 WantedBy=multi-user.target 
@@ -106,10 +106,10 @@ def start_system(ssh_client: SSHClient, pre: str, port: int):
 
 
 def main():
-    ip = '172.16.70.34'
+    ip = '172.17.140.158'
     port = 22
     username = 'root'
-    password = '123456'
+    password = 'QWer12#$'
 
     prefix = "prometheus"
     server_port = 9090

@@ -106,7 +106,7 @@ def start_system(ssh_client: SSHClient, pre: str, port: int):
 
 
 def main():
-    ip = '172.17.140.17'
+    ip = '172.17.140.158'
     port = 22
     username = 'root'
     password = 'QWer12#$'
