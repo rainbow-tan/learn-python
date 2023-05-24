@@ -338,3 +338,5 @@ help-nano-python-api/
 png/
 tmp*
 demo*
+
+*.tar.gz
