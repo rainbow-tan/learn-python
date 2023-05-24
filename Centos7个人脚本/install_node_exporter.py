@@ -73,7 +73,7 @@ def decompressing(ssh_client: SSHClient, basename, filename):
     exec_cmd(ssh_client, cmd)
 
 
-def systemc_file(pre, service_file, basename):
+def systemc_file(pre, service_file, basename,port):
     content = f"""
 [Unit]
 Description={pre}
@@ -81,7 +81,7 @@ After=network.target
 [Service]
 Type=simple
 User=root
-ExecStart=/etc/{basename}/{basename}/{pre}
+ExecStart=/etc/{basename}/{basename}/{pre} --web.listen-address=:{port}
 Restart=on-failure
 [Install]
 WantedBy=multi-user.target 
@@ -106,13 +106,13 @@ def start_system(ssh_client: SSHClient, pre: str, port: int):
 
 
 def main():
-    ip = '172.16.70.34'
+    ip = '172.17.140.211'
     port = 22
     username = 'root'
-    password = '123456'
+    password = 'abc123'
 
     prefix = "node_exporter"
-    server_port = 9100
+    server_port = 20001
 
     ssh_client = conn_linux(ip, port, username, password)
 
@@ -126,7 +126,7 @@ def main():
 
     service_file = f'{prefix}.service'
     service_path = f'/etc/systemd/system/{service_file}'
-    systemc_file(prefix, service_file, basename)
+    systemc_file(prefix, service_file, basename,server_port)
     upload_info = {pkg: f'/etc/{basename}/{os.path.basename(pkg)}',
                    service_file: service_path}
     upload(ssh_client, upload_info)
