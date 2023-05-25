@@ -1,7 +1,7 @@
 import os
 
 
-def traverse_folder(path: str, n: int = 99):
+def traverse_folder(path: str, n: int = 9999):
     path = os.path.abspath(path)
     assert os.path.isdir(path)
     assert n > 0
