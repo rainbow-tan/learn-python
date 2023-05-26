@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 .idea/
-.tar.gz
-.service
+*.tar.gz
+*.service
