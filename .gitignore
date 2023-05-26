@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 .idea/
-
-go1.13.14.linux-amd64.tar.gz
+.tar.gz
+.service
