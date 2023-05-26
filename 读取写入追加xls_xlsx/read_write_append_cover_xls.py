@@ -60,11 +60,32 @@ def append_xls(filename: str, sheet_name: str, data: List[list]):
     wb2.save('append.xls')
 
 
+def cover_xls(filename: str, sheet_name: str, data: List[list]):
+    filename = os.path.abspath(filename)
+    assert os.path.isfile(filename), f'{filename} is not file'
+    assert filename.lower().endswith('.xls'), f'不是.xls文件:{filename}'
+    wb: Book = xlrd.open_workbook(filename)
+    assert sheet_name in wb.sheet_names(), 'sheet name error'
+
+    wb2: xlwt.Workbook = copy(wb)
+    sheet2: xlwt.Worksheet = wb2.get_sheet(sheet_name)
+    for row_x, row in enumerate(data):
+        for clo_x, clo in enumerate(row):
+            sheet2.write(row_x, clo_x, clo)
+    wb2.save('over.xls')
+
+
 def main():
-    all_data = read_xls("src.xls", "Sheet1")
-    write_xls("new.xls", "Sheet1", all_data)
-    data = ['1a,d2,3s2,4s,52t,6f'.split(','), 'a,b,c,d,e'.split(',')]
-    append_xls('new.xls', 'Sheet1', data)
+    filename = "src.xls"
+    sheet_name = "Sheet1"
+    all_data = read_xls(filename, sheet_name)
+    write_xls("write.xls", sheet_name, all_data)
+    data = [
+        ['a', 'b', 'c', 'd'],
+        ['A', 'B', 'C', 'D']
+    ]
+    append_xls(filename, sheet_name, data)
+    cover_xls(filename, sheet_name, data)
 
 
 if __name__ == '__main__':
