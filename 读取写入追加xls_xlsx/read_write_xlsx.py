@@ -9,7 +9,8 @@ from openpyxl.worksheet.worksheet import Worksheet
 
 def read_xlsx(filename: str, sheet_name: str) -> List[list]:
     filename = os.path.abspath(filename)
-    assert os.path.isfile(filename)
+    assert os.path.isfile(filename), f'{filename} is not file'
+    assert filename.lower().endswith('.xlsx'), f'不是.xlsx文件:{filename}'
     wb: Workbook = openpyxl.load_workbook(filename)
     assert sheet_name in wb.sheetnames, "sheet name error"
     ws: Worksheet = wb[sheet_name]
@@ -26,10 +27,26 @@ def read_xlsx(filename: str, sheet_name: str) -> List[list]:
     return all_data
 
 
+def write_xlsx(filename: str, sheet_name: str, data: List[list]):
+    filename = os.path.abspath(filename)
+    assert filename.lower().endswith('.xlsx'), f'不是.xlsx文件:{filename}'
+    if not os.path.exists(os.path.dirname(filename)):
+        os.makedirs(os.path.dirname(filename))
+    wb: Workbook = openpyxl.Workbook()
+    sheet: Worksheet = wb.active
+    sheet.title = sheet_name
+
+    for row in data:
+        sheet.append(row)
+    wb.save(filename)
+    print(f"保存到:{filename}")
+
+
 def main():
-    filename = "SCD_SeriesFolderItemName_ForV1_Before.xlsx"
+    filename = "src.xlsx"
     sheet_name = "Sheet1"
     all_data = read_xlsx(filename, sheet_name)
+    write_xlsx('write.xlsx', sheet_name, all_data)
 
 
 if __name__ == '__main__':
